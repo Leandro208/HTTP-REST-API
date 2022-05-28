@@ -2,6 +2,8 @@ package com.pokemon.api.entity;
 
 public class Pokemon {
 	
+	//objeto que armazena os dados do pokemon
+	
 	private String name;
 	
 	private String highlight;

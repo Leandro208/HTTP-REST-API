@@ -10,11 +10,14 @@ import com.pokemon.api.entity.Pokedex;
 public class PokedexService {
 	
 	@Autowired
-	private RestTemplate template;
+	private RestTemplate template; 
 	
 	public Pokedex getPokedex() {
-		// metodo que busca todos os pokemons
-		String url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
+		/* metodo que retorna um objeto 
+		 * pokedex com todos os pokemons
+		 */
+	
+		String url = "https://pokeapi.co/api/v2/pokemon?limit=155";
 		
 		return template.getForObject(url, Pokedex.class);
 	}
