@@ -19,26 +19,33 @@ public class PokeController {
 
 	@Autowired
 	private PokedexService service;
-
+	
+	//metodo responsavel pela busca de todos os pokemons
 	@GetMapping("pokedex")
-	public Pokedex getPokedex() {
+	public Pokedex getPokedex(@RequestParam(name = "sort", required = false) String ordenacao) {
 		/* chamando metodo que busca todos os pokemons
 		 * e salvando em uma lista de Pokemon
 		 */
 		
 		List<Pokemon> poke = service.getPokedex().getResults();
-		
-		
-		
-		//ordem alfabetica
-		//listaOrdemAlfabetica(poke);
-		//ordenando por quantidade de caractere
-		listaOrdenadaCaractere(poke);
-		
-		
-		
-		
-		
+		/*se o parametro sort da url for igual a alf
+		 * então ele vai ordenar a lista por ordem alfabetica
+		 */
+		if (ordenacao != null && !ordenacao.isEmpty()) {
+			if (ordenacao.equalsIgnoreCase("alf")) {
+				// ordem alfabetica
+				listaOrdemAlfabetica(poke);
+			}
+
+			/*
+			 * se o parametro sort da url for igual a comp então ele vai ordenar a lista
+			 * pelo comprimento
+			 */
+			if (ordenacao.equalsIgnoreCase("comp")) {
+				// ordenando por quantidade de caractere
+				listaOrdenadaCaractere(poke);
+			}
+		}
 		
 		
 		
@@ -51,9 +58,12 @@ public class PokeController {
 		resultado.setResults(poke);
 		return resultado;
 	}
-
+	
+	
+	//metodo responsavel pela busca de pokemons buscados
 	@GetMapping("/pokemons")
-	public Pokedex getPokemons(@RequestParam(name = "name", required = false) String nome) {
+	public Pokedex getPokemons(@RequestParam(name = "name", required = false) String nome,
+							@RequestParam(name = "sort", required = false) String ordenacao) {
 		
 		/* chamando metodo que busca todos os 
 		 * e salvando em uma lista de Pokemon
@@ -61,14 +71,25 @@ public class PokeController {
 		List<Pokemon> poke = service.getPokedex().getResults();
 		
 		
-		//ordem alfabetica
-		listaOrdemAlfabetica(poke);
-		//ordenando por quantidade de caractere
-		//listaOrdenadaCaractere(poke);
+		/*se o parametro sort da url for igual a alf
+		 * então ele vai ordenar a lista por ordem alfabetica
+		 */
+		if (ordenacao != null && !ordenacao.isEmpty()) {
+			if (ordenacao.equalsIgnoreCase("alf")) {
+				// ordem alfabetica
+				listaOrdemAlfabetica(poke);
+			}
+
+			/*
+			 * se o parametro sort da url for igual a comp então ele vai ordenar a lista
+			 * pelo comprimento
+			 */
+			if (ordenacao.equalsIgnoreCase("comp")) {
+				// ordenando por quantidade de caractere
+				listaOrdenadaCaractere(poke);
+			}
+		}
 		
-		
-		
-	
 		/*AQUI JA COMEÇA A FILTRAGEM PARA DEIXAR SO OS POKEMONS
 		 * RELACIONADOS COM A PESQUISA
 		 */
