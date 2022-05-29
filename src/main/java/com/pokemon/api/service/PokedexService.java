@@ -17,15 +17,9 @@ public class PokedexService {
 		 * pokedex com todos os pokemons
 		 */
 	
-		String url = "https://pokeapi.co/api/v2/pokemon?limit=155";
+		String url = "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0";
 		
 		return template.getForObject(url, Pokedex.class);
 	}
 	
-	public Pokedex getPokemonName(String nome) {
-		//metodo que busca pokemon pelo nome digitado
-		
-		String url = "https://pokeapi.co/api/v2/pokemon/{name}";
-		return template.getForObject(url, Pokedex.class,nome);
-	}
 }
