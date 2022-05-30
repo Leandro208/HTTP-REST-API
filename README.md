@@ -14,7 +14,7 @@
 
 ## Demonstração usando o Postman:
     
-    ![pokeGet](https://user-images.githubusercontent.com/81039247/170880512-6d2e116a-8605-4e41-b704-15ddfb9a55b8.gif)
+  ![pokeGet](https://user-images.githubusercontent.com/81039247/170880512-6d2e116a-8605-4e41-b704-15ddfb9a55b8.gif)
     
 ## Docker
       
