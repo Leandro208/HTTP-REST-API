@@ -56,7 +56,7 @@ public class PokedexService {
 		return resultado;
 	}
 	
-	public static void listaOrdenadaCaractere(List<Pokemon> lista) {
+	private static void listaOrdenadaCaractere(List<Pokemon> lista) {
 		/*
 		 * Usando o algoritmo de ordenação bubble sort para ordenar pela quantidade de
 		 * caractere
@@ -77,7 +77,7 @@ public class PokedexService {
 		}
 	}
 
-	public static void listaOrdemAlfabetica(List<Pokemon> lista) {
+	private static void listaOrdemAlfabetica(List<Pokemon> lista) {
 		/*
 		 * Usando o algoritmo de ordenação bubble sort para colocar em ordem alfabetica
 		 * 
@@ -94,7 +94,7 @@ public class PokedexService {
 		}
 	}
 	
-	public static void updateListPokemon(List<Pokemon> poke, String nome) {
+	private static void updateListPokemon(List<Pokemon> poke, String nome) {
 		/*
 		 * AQUI JA COMEÇA A FILTRAGEM PARA DEIXAR SO OS POKEMONS RELACIONADOS COM A
 		 * PESQUISA

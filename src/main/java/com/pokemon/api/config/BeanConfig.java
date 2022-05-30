@@ -6,10 +6,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class BeanConfig {
-	
 	//factory para objetos template
-	
-	
 	@Bean
 	public RestTemplate getTemplate() {
 		return new RestTemplate();
