@@ -1,4 +1,7 @@
 
+## Diagrama do projeto
+![Endpoint que retorna todos os pokémons disponibilizados pela PokéApi ou os pokemosn buscados](https://user-images.githubusercontent.com/81039247/170908055-ce0b82cc-7b39-4e29-8c04-3d8ef1362f3c.png)
+
 ## Requests: 
   - `GET /pokedex?sort=`
     - Retorna uma lista com todos os pokemons
